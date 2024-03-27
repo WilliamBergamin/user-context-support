@@ -1,0 +1,55 @@
+{
+  "display_information": {
+    "name": "user-context-support"
+  },
+  "outgoing_domains": [],
+  "settings": {
+    "org_deploy_enabled": true,
+    "socket_mode_enabled": true
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "user-context-support"
+    },
+    "app_home": {
+      "messages_tab_enabled": true
+    }
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "chat:write"
+      ]
+    }
+  },
+  "functions": {
+    "sample_function": {
+      "title": "Sample function",
+      "description": "Runs sample function",
+      "input_parameters": {
+        "user": {
+          "type": "slack#/types/user_context",
+          "title": "User who ran the workflowy",
+          "description": "Send this to who?",
+          "is_required": true,
+          "hint": "Select a user in the workspace"
+        },
+        "word_up": {
+          "type": "string",
+          "title": "input test",
+          "description": "Send this to who?",
+          "is_required": true
+        }
+      },
+      "output_parameters": {
+        "user_id": {
+          "type": "slack#/types/user_id",
+          "title": "User",
+          "description": "User to used the function",
+          "is_required": true,
+          "name": "user_id"
+        }
+      }
+    }
+  }
+}
